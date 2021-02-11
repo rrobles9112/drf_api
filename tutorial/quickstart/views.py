@@ -47,7 +47,7 @@ class WeatherView(APIView):
     """
         Request external weather api and output formatted response.
     """
-    #@method_decorator(cache_page(60*60*2))
+    @method_decorator(cache_page(60*60*2))
     def get(self, request, country, city):
         data = dict(get_weather(country, city))
 
